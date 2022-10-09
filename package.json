@@ -1,0 +1,22 @@
+{
+  "name": "bulletjspusher",
+  "version": "1.0.0",
+  "description": "A package to push (yes, only push) things using Push Bullets API",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "PushBullet",
+    "API"
+  ],
+  "author": "Doonguin",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^1.1.2"
+  }
+}
