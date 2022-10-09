@@ -1,6 +1,24 @@
 # bulletjspusher
 This is a small side project I decided to make for fun! :)
 
+## Where to get the PushBullet details needed for this package
+You can get the all the idens and the access token from the main website of PushBullet.
+
+The access token:
+
+To get an access token, create a PushBullet account.
+When logged into your account, head over the the settings and click on "account".
+Scroll a bit down and you should see a gray button with the text "Create access token".
+Click on this button and copy the token to use in this package.
+
+
+To get idens for devices:
+
+When logged into your PushBullet account, head over to devices.
+You should see a list of all your connected devices.
+Click on one of the devices and copy the the string of characters after "/#devices/".
+This is your device iden.
+
 ## How does it work
 This package is very very VERY simple to understand, so don't worry :)
 
@@ -52,7 +70,7 @@ This is all you have to do to push messages via pushbullet!
 
 The explaination to all parameters are also added into vscode via @param.
 
-## When bug or issues occure
+## When bugs or issues occur
 You can report these to me via githubs issue tab.
 
 I can't promise that I will get rid of the bugs and issues people may find,
