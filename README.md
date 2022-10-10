@@ -55,7 +55,7 @@ pb.PostBullet(
 
 // For pushing a file
 pb.PostBullet(
-    'link', // The type of push
+    'file', // The type of push
     'Hello World Again!', // The body of the message
     'Hello World!', // The title of the message
     'device_iden', // Or "channel_tag", "client_iden"
