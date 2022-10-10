@@ -1,6 +1,6 @@
 {
   "name": "bulletjspusher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package to push (yes, only push) things using Push Bullets API",
   "main": "main.js",
   "scripts": {
