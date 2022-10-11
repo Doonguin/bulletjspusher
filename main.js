@@ -2,7 +2,7 @@
 const axios = require("axios");
 
 // Set the variable for the url to the pushbullet api
-let pbapi = "https://api.pushbullet.com/v2/pushes";
+let pbapi = "https://api.pushbullet.com/v2";
 
 // Export the main function
 /**
@@ -52,6 +52,9 @@ exports.PushBullet = function(token) {
      */
 
     exports.PostBullet = (type, msg, title, idenType, iden, url, fileName, fileType) => {
+        // Set url to pushes
+        pbapi = pbapi + "/pushes";
+
         // Check if input values are the right type or null
         if (
             (!type || typeof(type) != "string") || 
@@ -60,7 +63,7 @@ exports.PushBullet = function(token) {
             (!idenType || typeof(idenType) != "string") ||
             (!iden || typeof(iden) != "string")
             ) {
-            throw new Error("Either type, msg, title, idenType or iden is not defined as parameter in the PushData function.");
+            throw new Error("Either type, msg, title, idenType or iden is not defined as parameter in the PostBullet function.");
         }
 
         // Define data object for push
@@ -97,6 +100,34 @@ exports.PushBullet = function(token) {
         axios.post(pbapi, Data, Config)
             .catch( (err) => {
                 console.log(err);
+            });
+    }
+
+    // Get data function
+    /**
+     * @param {String} option The kind of data you want to receive. Options:
+     * - channels
+     * - chats
+     * - contacts
+     * - devices
+     * - grants
+     * - pushes
+     * - subscriptions
+     */
+
+    exports.GetBullet = (option) => {
+        // Check if the parameter is defined
+        if (!option || typeof(option) != "string") {
+            throw new Error("The parameter 'option' in the GetBullet function is not defined or is not a string.");
+        }
+
+        // Set the url to the requested url to get data
+        pbapi = pbapi + `/${option}`;
+
+        // Get the data that was requested
+        axios.get(pbapi, Config)
+            .then((res) => {
+                console.log(res.data[option]);
             });
     }
 }
