@@ -19,6 +19,20 @@ You should see a list of all your connected devices.
 Click on one of the devices and copy the the string of characters after "/#devices/".
 This is your device iden.
 
+alternatively you could use:
+```js
+pb.GetBullet('OPTION');
+```
+This will console log the requested data.
+The options for this function are:
+- channels
+- chats
+- contacts
+- devices
+- grants
+- pushes
+- subscriptions
+
 ## How does it work
 This package is very very VERY simple to understand, so don't worry :)
 
