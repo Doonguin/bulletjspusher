@@ -101,6 +101,9 @@ exports.PushBullet = function(token) {
             .catch( (err) => {
                 console.log(err);
             });
+        
+        // Reset link at the end of the function
+        pbapi = "https://api.pushbullet.com/v2";
     }
 
     // Get data function
@@ -129,6 +132,9 @@ exports.PushBullet = function(token) {
             .then((res) => {
                 console.log(res.data[option]);
             });
+        
+        // Reset the link at the end of the function
+        pbapi = "https://api.pushbullet.com/v2";
     }
 }
 
