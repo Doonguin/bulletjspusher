@@ -1,3 +1,7 @@
+# DIRS
 node_modules
 dist
+test
+
+# NODE
 package-lock.json

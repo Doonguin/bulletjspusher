@@ -1,16 +1,23 @@
-class Point {
-    readonly x: number;
-    readonly y: number;
+// Importing some important stuff, to make things work just how we like it here
+import { fetchMe } from "./calls/Me";
 
-    constructor(x: number, y: number) {
-        this.x = x;
-        this.y = y;
-    }
-
-    get getCoordinates() {
-        return `X-axis: ${this.x}, Y-axis: ${this.y}`
-    }
+// Basically external parameters, it ain't that deep bro
+export interface Options {
+    apiKey: string;
+    baseUrl?: string;
 }
 
-const point = new Point(10, 25);
-console.log(point.getCoordinates);
+// API Wrapper type shii, LET'S FCKN GOOOOO
+export class BulletJsPusher {
+    private apiKey: string;
+    private baseUrl?: string;
+
+    constructor(options: Options) {
+        this.apiKey = options.apiKey;
+        this.baseUrl = options.baseUrl || "https://api.pushbullet.com/v2";
+    }
+
+    async getMe() {
+        return fetchMe({ url: `${this.baseUrl}/users/me`, apiKey: this.apiKey });
+    }
+}
