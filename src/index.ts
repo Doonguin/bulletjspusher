@@ -1,5 +1,5 @@
 // Importing some important stuff, to make things work just how we like it here
-import { fetchMe } from "./calls/Me";
+import { fetchMe } from "./calls/Me.js";
 
 // Basically external parameters, it ain't that deep bro
 export interface Options {
