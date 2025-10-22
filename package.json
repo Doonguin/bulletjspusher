@@ -1,10 +1,12 @@
 {
   "name": "bulletjspusher",
-  "version": "2.0.2",
-  "description": "A package to push (yes, only push) things using Push Bullets API",
-  "main": "main.js",
+  "version": "3.0.0",
+  "description": "A package to push notifications using Push Bullets API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "node test.js"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +18,8 @@
   ],
   "author": "Doonguin",
   "license": "UNLICENSED",
-  "dependencies": {
-    "axios": "^1.1.2"
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3"
   }
 }
