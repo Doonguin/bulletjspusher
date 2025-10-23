@@ -1,6 +1,6 @@
 // Importing some important stuff, to make things work just how we like it here
-import { fetchDevices } from "./calls/DeviceIden.js";
-import { fetchMe } from "./calls/Me.js";
+import { fetchDevices, type Device, type FullResponse } from "./calls/DeviceIden.js";
+import { fetchMe, type UserData } from "./calls/Me.js";
 
 // Basically external parameters, it ain't that deep bro
 export interface Options {
@@ -23,7 +23,7 @@ export class BulletJsPusher {
         return fetchMe({ url: `${this.baseURL}/users/me`, apiKey: this.apiKey });
     }
 
-    static async getMe(options: { apiKey: string }): Promise<any> {
+    static async getMe(options: { apiKey: string }): Promise<UserData> {
         const client = new BulletJsPusher(options);
         return client.getMe();
     }
@@ -33,7 +33,7 @@ export class BulletJsPusher {
         return fetchDevices({ url: `${this.baseURL}/devices`, apiKey: this.apiKey });
     }
 
-    static async getDevices(options: { apiKey: string }): Promise<any> {
+    static async getDevices(options: { apiKey: string }): Promise<FullResponse> {
         const client = new BulletJsPusher(options);
         return client.getDevices();
     }
