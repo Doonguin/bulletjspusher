@@ -19,7 +19,7 @@ export class BulletJsPusher {
 
     // Get own data from pushbullet
     async getMe() {
-        return fetchMe({ url: `${this.baseUrl}/users/me`, apiKey: this.apiKey });
+        return fetchMe({ url: `${this.baseURL}/users/me`, apiKey: this.apiKey });
     }
 
     static async getMe(options: { apiKey: string }): Promise<any> {
