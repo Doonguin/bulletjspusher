@@ -12,8 +12,8 @@ export interface UserData {
     email_normalized: string;
     image_url: string;
     active: boolean;
-    created: EpochTimeStamp;
-    modified: EpochTimeStamp;
+    created: number;
+    modified: number;
     max_upload_size: number;
 }
 

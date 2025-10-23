@@ -17,7 +17,13 @@ export class BulletJsPusher {
         this.baseUrl = options.baseUrl || "https://api.pushbullet.com/v2";
     }
 
+    // Get own data from pushbullet
     async getMe() {
         return fetchMe({ url: `${this.baseUrl}/users/me`, apiKey: this.apiKey });
+    }
+
+    static async getMe(options: { apiKey: string }) {
+        const temporary = new BulletJsPusher(options);
+        return temporary.getMe();
     }
 }
