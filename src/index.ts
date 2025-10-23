@@ -1,4 +1,5 @@
 // Importing some important stuff, to make things work just how we like it here
+import { fetchDevices } from "./calls/DeviceIden.js";
 import { fetchMe } from "./calls/Me.js";
 
 // Basically external parameters, it ain't that deep bro
@@ -25,5 +26,15 @@ export class BulletJsPusher {
     static async getMe(options: { apiKey: string }): Promise<any> {
         const client = new BulletJsPusher(options);
         return client.getMe();
+    }
+
+    // Get device identification
+    async getDevices() {
+        return fetchDevices({ url: `${this.baseURL}/devices`, apiKey: this.apiKey });
+    }
+
+    static async getDevices(options: { apiKey: string }): Promise<any> {
+        const client = new BulletJsPusher(options);
+        return client.getDevices();
     }
 }
