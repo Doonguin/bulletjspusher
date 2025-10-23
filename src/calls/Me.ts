@@ -3,6 +3,12 @@ export interface MeOptions {
     apiKey: string;
 }
 
+export interface UserData {
+    id: string;
+    name: string;
+    email: string;
+}
+
 export async function fetchMe(options: MeOptions) {
     const response = await fetch(options.url, { headers: { 'Access-Token': options.apiKey }});
 
