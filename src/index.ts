@@ -22,8 +22,8 @@ export class BulletJsPusher {
         return fetchMe({ url: `${this.baseUrl}/users/me`, apiKey: this.apiKey });
     }
 
-    static async getMe(options: { apiKey: string }) {
-        const temporary = new BulletJsPusher(options);
-        return temporary.getMe();
+    static async getMe(options: { apiKey: string }): Promise<any> {
+        const client = new BulletJsPusher(options);
+        return client.getMe();
     }
 }
